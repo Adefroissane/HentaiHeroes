@@ -24,7 +24,7 @@ public class automatisation {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        driver.quit();
+        driver.close();
     }
 
     @Test
@@ -53,6 +53,7 @@ public class automatisation {
         }
 
         boolean missionDispo = homePage.missionDisponible(driver);
+        System.out.println(missionDispo);
         if (missionDispo == true) {
             MissionPage missionPage = homePage.openMissionPage(driver);
             missionPage.collectEtLanceMission(driver);

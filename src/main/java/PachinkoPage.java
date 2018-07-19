@@ -19,6 +19,9 @@ public class PachinkoPage extends HentaiHeroesPage{
     @FindBy(css = "#pachinko_left > div.left_part > h3")
     private WebElement reperePatchinko;
 
+    @FindBy(css = "#pachinko_rewards > button")
+    private WebElement genial;
+
     public void collectPachinkoGratuit(WebDriver driver) {
 
         WebDriverWait webDriverWait = new WebDriverWait(driver, 5);
@@ -26,7 +29,9 @@ public class PachinkoPage extends HentaiHeroesPage{
         if(pachinkoGratuit.isDisplayed()) {
             pachinkoGratuit.click();
         }
-        //ajouter le click manquant
+        WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
+        webDriverWait2.until(ExpectedConditions.visibilityOf(genial));
+        genial.click();
         getHeader().openHomePage(driver);
     }
 }

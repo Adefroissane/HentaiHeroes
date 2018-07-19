@@ -48,10 +48,11 @@ public class MissionPage extends HentaiHeroesPage{
     }
 
     public void lanceMission(WebDriver driver){
-        List<WebElement> myElements = driver.findElements(By.className("blue_text_button"));
-        System.out.println("Nombre de mission restante" + myElements.size());
-        if(myElements.size() !=0) {
-            for(WebElement e : myElements) {
+        System.out.println("Passe");
+        List<WebElement> myElements2 = driver.findElements(By.className("blue_text_button"));
+        System.out.println("Nombre de mission restante" + myElements2.size());
+        if(myElements2.size() !=0) {
+            for(WebElement e : myElements2) {
                 if(e.isDisplayed()){
                     e.click();
                 }

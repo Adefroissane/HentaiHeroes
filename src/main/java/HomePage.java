@@ -23,7 +23,7 @@ public class HomePage  extends HentaiHeroesPage{
     private WebElement toutCollecter;
 
     @FindBy(css = "#homepage > a:nth-child(9) > div > span")
-    private WebElement activité;
+    private WebElement activite;
 
     @FindBy(css = "#homepage > a:nth-child(7) > div > span")
     private WebElement arene;
@@ -42,6 +42,9 @@ public class HomePage  extends HentaiHeroesPage{
 
     @FindBy(css = "#home_missions_bar1 > div > div.text")
     private WebElement missionNonDisponible;
+
+    @FindBy(css = "#home_missions_bar2 > div > div.backbar.borderbar > div")
+    private WebElement missionNonDisponible2;
 
     @FindBy(css = "#homepage > a:nth-child(9) > div > span")
     private WebElement mission;
@@ -103,7 +106,12 @@ public class HomePage  extends HentaiHeroesPage{
         {
             return true;
         }
-        return true;
+        if(missionNonDisponible.isDisplayed()) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 
     public MissionPage openMissionPage (WebDriver driver) {
