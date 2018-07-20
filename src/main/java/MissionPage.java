@@ -40,6 +40,12 @@ public class MissionPage extends HentaiHeroesPage{
                     e.click();
                     WebDriverWait webDriverWait2 = new WebDriverWait(driver, 5);
                     webDriverWait2.until(ExpectedConditions.visibilityOf(validerRecompense));
+                    try{
+                        Thread.sleep(500);
+                    }
+                    catch(InterruptedException ab){
+                        ab.printStackTrace();
+                    }
                     validerRecompense.click();
                 }
             }
